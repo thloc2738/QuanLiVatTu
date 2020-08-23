@@ -167,11 +167,11 @@ void Doc_ds_nv_tu_file (DS_NHAN_VIEN &ds_nv)
 
 			inFile >> ds_nv.ds[i]->ma_nv;
 			getline(inFile, temp);
-			getline(inFile,ds_nv.ds[i]->ho, '\n');
-			getline(inFile,ds_nv.ds[i]->ten, '\n');
+			getline(inFile,ds_nv.ds[i]->ho, ',');
+			getline(inFile,ds_nv.ds[i]->ten, ',');
 			inFile >> ds_nv.ds[i]->phai;
 			inFile.ignore();
-			getline(inFile, ds_nv.ds[i]->cmnd, '\n');
+			getline(inFile, ds_nv.ds[i]->cmnd, ',');
 			inFile >> sl_HD;
 
 			Khoi_tao_ds_hd(ds_nv.ds[i]->danh_sach_hd);
@@ -180,7 +180,7 @@ void Doc_ds_nv_tu_file (DS_NHAN_VIEN &ds_nv)
 			for (int j = 0; j < sl_HD; j++)
 			{
 				getline(inFile, temp);
-				getline(inFile, hdon->so_hd, '\n');
+				getline(inFile, hdon->so_hd, ',');
 
 				inFile >> hdon->ngay_lap_hd.Ngay;
 				inFile >> hdon->ngay_lap_hd.Thang;
@@ -195,7 +195,7 @@ void Doc_ds_nv_tu_file (DS_NHAN_VIEN &ds_nv)
 				for (int k = 0; k < sl_CTHD; k++)
 				{
 					getline(inFile, temp);
-					getline(inFile, hdon->danh_sach_chi_tiet_hd.ds[k].ma_vt, '\n');
+					getline(inFile, hdon->danh_sach_chi_tiet_hd.ds[k].ma_vt, ',');
 					inFile >> hdon->danh_sach_chi_tiet_hd.ds[k].so_luong;
 					inFile >> hdon->danh_sach_chi_tiet_hd.ds[k].don_gia;
 					inFile >> hdon->danh_sach_chi_tiet_hd.ds[k].VAT;

@@ -766,7 +766,7 @@ void nhap_hoa_don(DS_NHAN_VIEN& ds_nv, DS_VAT_TU &dsVT)
 	p->ngay_lap_hd.Nam = XuLyNhapSo();
 	
 
-	p->danh_sach_chi_tiet_hd.sl++;
+	//p->danh_sach_chi_tiet_hd.sl++;
 	p->pNext = NULL;
 
 	int luachon = 0;
