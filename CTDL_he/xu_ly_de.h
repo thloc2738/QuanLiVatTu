@@ -788,7 +788,7 @@ void nhap_hoa_don(DS_NHAN_VIEN& ds_nv, DS_VAT_TU &dsVT)
 			xoaCTHD(dsVT, p->danh_sach_chi_tiet_hd, p->loai);
 			break;
 		case 3:
-			them_hd_vao_cuoi(tam->danh_sach_hd, p);
+			themHDVaoCuoi(tam->danh_sach_hd, p);
 			return;
 		default:
 			cout << "Input invalid";
@@ -798,12 +798,11 @@ void nhap_hoa_don(DS_NHAN_VIEN& ds_nv, DS_VAT_TU &dsVT)
 }
 
 
-
 void xuat_hoa_don(DS_NHAN_VIEN ds_nv)
 {
 	for (int i = 0; i < ds_nv.sl; i++)
 	{
-		cout << "\n================= NHAN VIEN " << i+ 1 << " =================" << endl;
+		cout << "\n================= NHAN VIEN " << i + 1 << " =================" << endl;
 		for (HOA_DON* k = ds_nv.ds[i]->danh_sach_hd.pHead; k !=NULL; k = k->pNext)
 		{
 			cout << "\n================= HOA DON " << k->so_hd << " =================" << endl;
@@ -819,7 +818,6 @@ void xuat_hoa_don(DS_NHAN_VIEN ds_nv)
 				cout << "Phan tram VAT: " << k->danh_sach_chi_tiet_hd.ds[j].VAT << endl;
 				cout << "Trang thai: " << k->danh_sach_chi_tiet_hd.ds[j].trang_thai << endl;
 			}
-
 		}
 	}
 }
@@ -1175,8 +1173,8 @@ void RunMenu(DS_VAT_TU& ds_vt, DS_NHAN_VIEN& ds_nv)/* HOA_DON *hd,DS_HOA_DON &ds
 			}
 			case 19:
 			{
-				Luu_ds_nv_vao_file(ds_nv);
-				Luu_ds_vattu_vao_file(ds_vt);
+				saveDSVT(ds_vt);
+				saveDSNV(ds_nv);
 				exit(0);
 			}
 			}

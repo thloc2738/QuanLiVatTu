@@ -1,10 +1,9 @@
 ﻿  main.cpp
-F:\1\loc-master\loc-master\CTDL_he\linhtinh.h(57,26): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-F:\1\loc-master\loc-master\CTDL_he\linhtinh.h(57,29): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-F:\1\loc-master\loc-master\CTDL_he\linhtinh.h(278,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-F:\1\loc-master\loc-master\CTDL_he\linhtinh.h(480,7): warning C4551: function call missing argument list
-F:\1\loc-master\loc-master\CTDL_he\doc_ghi_file.h(65,6): warning C4101: 'n': unreferenced local variable
-F:\1\loc-master\loc-master\CTDL_he\xu_ly_de.h(628,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-F:\1\loc-master\loc-master\CTDL_he\linhtinh.h(398): warning C4715: 'ChuyenThang': not all control paths return a value
-F:\1\loc-master\loc-master\CTDL_he\xu_ly_de.h(569): warning C4715: 'ktra_soluongton': not all control paths return a value
-  CTDL_he.vcxproj -> F:\1\loc-master\loc-master\x64\Debug\CTDL_he.exe
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\linhtinh.h(57,26): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\linhtinh.h(57,29): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\linhtinh.h(278,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\linhtinh.h(480,7): warning C4551: function call missing argument list
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\xu_ly_de.h(628,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\linhtinh.h(398): warning C4715: 'ChuyenThang': not all control paths return a value
+D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\CTDL_he\xu_ly_de.h(569): warning C4715: 'ktra_soluongton': not all control paths return a value
+  CTDL_he.vcxproj -> D:\Code\C-C++\CTDL\DeTaiCTDL\New folder\QuanLiVatTu\x64\Debug\CTDL_he.exe

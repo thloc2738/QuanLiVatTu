@@ -1,8 +1,0 @@
-7
-VT001,Tu Lanh,Cai,5,0
-VT002,Tivi,Cai,7,0
-VT003,Nem,Cai,3,0
-VT004,Ban,Cai,6,0
-VT005,Ghe,Cai,15,0
-VT006,Quat,Cai,12,0
-VT007,May Giat,Cai,16,0
