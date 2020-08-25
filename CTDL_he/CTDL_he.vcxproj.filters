@@ -32,5 +32,8 @@
     <ClInclude Include="doc_ghi_file.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GiaoDien.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

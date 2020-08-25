@@ -1,7 +1,4 @@
-﻿#pragma once
-#include<Windows.h>
-#include "ctdl.h"
-//==============chuan hoa chu===================
+﻿//==============chuan hoa chu===================
 void chuan_hoa_chu(string& chu)
 {
 	// |     tU    lAnH |

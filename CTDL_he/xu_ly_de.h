@@ -1,7 +1,7 @@
-﻿#pragma once
-#include "ctdl.h"
+﻿#include "ctdl.h"
 #include "linhtinh.h"
 #include "doc_ghi_file.h"
+#include"GiaoDien.h"
 
 
 //================================================
@@ -115,16 +115,21 @@ void chuyen_cay_sang_mang(tree t, VAT_TU* ds[], int& nds)
 
 	}
 }
-void in_ds_vat_tu(VAT_TU* ds[], int& sl)
+void in_ds_vat_tu(VAT_TU* ds[], int& sl,int toadoX,int toadoY)
 {
+	giaoDienInDSVT(toadoX, toadoY, sl);
 	for (int i = 0; i < sl; i++)
 	{
-		cout << "================ vat tu " << i << "=================" << endl;
-		cout << "Ma vat tu: " << ds[i]->ma_vt << endl;
-		cout << "Ten vat tu: " << ds[i]->ten_vt << endl;
-		cout << "Don vi tinh: " << ds[i]->don_vi_tinh << endl;
-		cout << "So luong ton: " << ds[i]->so_luong_ton << endl;
+		gotoXY(toadoX + 1, toadoY + 4 + i * 2);
+		cout << ds[i]->ma_vt << endl;
+		gotoXY(toadoX + 26, toadoY + 4 + i * 2);
+		cout << ds[i]->ten_vt << endl;
+		gotoXY(toadoX + 51, toadoY + 4 + i * 2);
+		cout << ds[i]->don_vi_tinh << endl;
+		gotoXY(toadoX + 76, toadoY + 4 + i * 2);
+		cout << ds[i]->so_luong_ton << endl;
 	}
+	getch();
 }
 void hoan_vi_2_vt(VAT_TU*a, VAT_TU*b)
 {
@@ -329,16 +334,21 @@ void them_nhan_vien(DS_NHAN_VIEN& ds_nv)
 		
 }
 //=================== xuat ds nhan vien ================
-void xuat_ds_nv(DS_NHAN_VIEN ds_nv)
+void xuat_ds_nv(DS_NHAN_VIEN ds_nv,int toadoX,int toadoY)
 {
+	giaoDienInDSNV(toadoX, toadoY, ds_nv.sl);
 	for (int i = 0; i < ds_nv.sl; i++)
 	{
-		cout << "\t\t================= NHAN VIEN " << i + 1 << "==================" << endl;
-		cout << "Ma nhan vien: " << ds_nv.ds[i]->ma_nv << endl;
-		cout << "Ho ten nhan vien: " << ds_nv.ds[i]->ho << " " << ds_nv.ds[i]->ten << endl;
-		cout << "Phai nhan vien: " << ds_nv.ds[i]->phai << endl;
-		cout << "So chung minh nhan dan: " << ds_nv.ds[i]->cmnd << endl;
+		gotoXY(toadoX + 1, toadoY + 4 + i * 2);
+		cout << ds_nv.ds[i]->ma_nv ;
+		gotoXY(toadoX + 26, toadoY + 4 + i * 2);
+		cout << ds_nv.ds[i]->ho << " " << ds_nv.ds[i]->ten ;
+		gotoXY(toadoX + 51, toadoY + 4 + i * 2);
+		cout << ds_nv.ds[i]->phai ;
+		gotoXY(toadoX + 76, toadoY + 4 + i * 2);
+		cout << ds_nv.ds[i]->cmnd ;
 	}
+	getch();
 }
 
 //================ sap xep danh sach nhan vien ============
@@ -919,7 +929,7 @@ void tra_hoadon(DS_NHAN_VIEN ds_nv, DS_VAT_TU ds_vt)
 		//return;
 	}
 }
-void xuat_hoa_don_theo_sohd(DS_NHAN_VIEN ds_nv)
+void xuat_hoa_don_theo_sohd(DS_NHAN_VIEN ds_nv,int toadoX,int toadoY)
 {
 	bool kt = false;
 	string ma;
@@ -928,7 +938,6 @@ void xuat_hoa_don_theo_sohd(DS_NHAN_VIEN ds_nv)
 	
 	for (int i = 0; i < ds_nv.sl; i++)
 	{
-		cout << "\n================= NHAN VIEN " << i+1 << " =================" << endl;
 		for (HOA_DON* k = ds_nv.ds[i]->danh_sach_hd.pHead; k != NULL; k = k->pNext)
 		{
 			if (k->so_hd == ma)
@@ -938,18 +947,25 @@ void xuat_hoa_don_theo_sohd(DS_NHAN_VIEN ds_nv)
 				cout << "So hoa don: " << k->so_hd << endl;
 				cout << "Ngay lap hoa don: " << k->ngay_lap_hd.Ngay << "/" << k->ngay_lap_hd.Thang << "/" << k->ngay_lap_hd.Nam << endl;
 				cout << "Loai hoa don: " << k->loai << endl;
-				for (int i = 0; i < k->danh_sach_chi_tiet_hd.sl; i++)
+				gotoXY(45, 8);
+				cout << "DANH SACH CHI TIET HOA DON";
+				giaoDienInCTHD(toadoX, toadoY, k->danh_sach_chi_tiet_hd.sl);
+				for (int j = 0; j < k->danh_sach_chi_tiet_hd.sl; j++)
 				{
-					cout << "=============== Vat tu " << i + 1 << " =======================" << endl;
-					cout << "Ma vat tu: " << k->danh_sach_chi_tiet_hd.ds[i].ma_vt << endl;
-					cout << "So luong: " << k->danh_sach_chi_tiet_hd.ds[i].so_luong << endl;
-					cout << "Don gia: " << k->danh_sach_chi_tiet_hd.ds[i].don_gia << endl;
-					cout << "Phan tram VAT: " << k->danh_sach_chi_tiet_hd.ds[i].VAT << endl;
-					cout << "Trang thai: " << k->danh_sach_chi_tiet_hd.ds[i].trang_thai << endl;
+					gotoXY(toadoX + 1, toadoY + 4 + j * 2);
+					cout << k->danh_sach_chi_tiet_hd.ds[j].ma_vt ;
+					gotoXY(toadoX + 21, toadoY + 4 + j * 2);
+					cout << k->danh_sach_chi_tiet_hd.ds[j].so_luong ;
+					gotoXY(toadoX + 41, toadoY + 4 + j * 2);
+					cout << k->danh_sach_chi_tiet_hd.ds[j].don_gia ;
+					gotoXY(toadoX + 61, toadoY + 4 + j * 2);
+					cout << k->danh_sach_chi_tiet_hd.ds[j].VAT ;
+					gotoXY(toadoX + 81, toadoY + 4 + j * 2);
+					cout << k->danh_sach_chi_tiet_hd.ds[j].trang_thai ;
 				}
+				getch();
+				break;
 			}
-			
-
 		}
 	}
 	if (kt == false)
@@ -998,10 +1014,6 @@ void Menu()
 }
 void RunMenu(DS_VAT_TU& ds_vt, DS_NHAN_VIEN& ds_nv)/* HOA_DON *hd,DS_HOA_DON &ds_hd, DS_CHI_TIET_HD* ds_cthd)*/
 {
-	//=================== khai bao bien ==============
-
-	//=================== load file ==================	
-
 	if (kbhit())
 	{
 		char c = getch();
@@ -1054,8 +1066,7 @@ void RunMenu(DS_VAT_TU& ds_vt, DS_NHAN_VIEN& ds_nv)/* HOA_DON *hd,DS_HOA_DON &ds
 				//duyet_RNL(ds_vt.TREE);
 				chuyen_cay_sang_mang(ds_vt.TREE, ds, nds);
 				sap_xep_vt_giam(ds, nds);
-				in_ds_vat_tu(ds, nds);
-				system("pause");
+				in_ds_vat_tu(ds, nds,5,5);
 				break;
 			}
 
@@ -1112,8 +1123,7 @@ void RunMenu(DS_VAT_TU& ds_vt, DS_NHAN_VIEN& ds_nv)/* HOA_DON *hd,DS_HOA_DON &ds
 			{
 				//nhan_vien* ds[MaxNV];
 				sap_xep_ds_nv(ds_nv);
-				xuat_ds_nv(ds_nv);
-				system("pause");
+				xuat_ds_nv(ds_nv,5,5);
 				break;
 			}
 			case 13:
@@ -1155,8 +1165,7 @@ void RunMenu(DS_VAT_TU& ds_vt, DS_NHAN_VIEN& ds_nv)/* HOA_DON *hd,DS_HOA_DON &ds
 			}
 			case 17:
 			{
-				xuat_hoa_don_theo_sohd(ds_nv);
-				system("pause");
+				xuat_hoa_don_theo_sohd(ds_nv,5,10);
 				break;
 			}
 			case 18:

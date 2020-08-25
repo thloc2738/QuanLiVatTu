@@ -5,6 +5,7 @@
 #include<ctime>
 #include<conio.h>
 #include<fstream>
+#include<Windows.h>
 #define MaxNV 500
 #define dscthd 20
 int pointer = 7;
